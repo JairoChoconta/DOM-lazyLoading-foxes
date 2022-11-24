@@ -4,11 +4,14 @@ const isIntercepting = (entry) => {
 
 const accion = (entry) => {
   const container = entry.target; // container (DIV)
-  const imagen = container.firstChild;
+  const imagen = container.querySelector("img");
   const url = imagen.dataset.src;
   //load image
   imagen.src = url;
   //console.log(nodo.nodeName);
+
+  loadedImages++;
+  printLog();
   observer.unobserve(container);
 };
 
